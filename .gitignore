@@ -1,0 +1,9 @@
+.vscode/
+dist/
+node_modules/
+review001/
+__pycache__/
+
+*.exe
+*.json
+!tsconfig.json
