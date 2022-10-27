@@ -1,6 +1,4 @@
-from ast import main
 from typing import List
-
 
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
