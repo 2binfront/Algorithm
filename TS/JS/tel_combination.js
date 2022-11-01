@@ -28,7 +28,10 @@ var letterCombinations = function (digits) {
             res.push(combination);
         }
         else {
+            //index 代表当前给定字符串中的序列号
             let mapletter = digits[index];
+
+            //对循环到的当前数字对应的电话字符串迭代回溯
             for (const letter of map[mapletter]) {
                 combination += letter;
                 dfs(index + 1);
