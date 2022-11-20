@@ -36,26 +36,26 @@ function arrayToTree(items) {
             }
             itemMap[pid].children.push(treeItem)
         }
-
     }
     return result;
 }
 
-function getChildren(data,result,pid){
-    for(const item of data){
-        if(item.pid===pid){
-            let tmp = {...item,children:[]};
+function getChildren(data, result, pid) {
+    for (const item of data) {
+        if (item.pid === pid) {
+            let tmp = { ...item, children: [] };
             result.push(tmp);
-            getChildren(data,tmp.children,tmp.id);
+            getChildren(data, tmp.children, tmp.id);
         }
     }
 }
 
-function arrayToTree_recursive(data,pid=0){
-    let result=[];
-    getChildren(data,result,pid);
+function arrayToTree_recursive(data, pid = 0) {
+    let result = [];
+    getChildren(data, result, pid);
     return result;
 }
 
-console.log(arrayToTree_recursive(arr));
-console.log(arrayToTree(arr));
+console.log(JSON.stringify(arrayToTree_recursive(arr)));
+console.log(JSON.stringify(arrayToTree(arr),null,4));
+// util.inspect(arrayToTree(arr))
