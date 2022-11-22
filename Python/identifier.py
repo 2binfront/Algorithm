@@ -5,7 +5,7 @@ import re
 
 
 def identifier(str):
-    template = r"^[_A-Za-z][_a-zA-Z0-9].$"
+    template = r"^[_A-Za-z][_a-zA-Z0-9]*$"
     if re.match(template, str):
         print("right")
     elif str[0] != "_" and not str[0].isalpha():
@@ -17,7 +17,7 @@ def identifier(str):
 test1 = "11"
 test2 = "abuac"
 test3 = "Ab11_"
-test4 = "_ "
+test4 = "_[]\\"
 identifier(test1)
 identifier(test2)
 identifier(test3)
