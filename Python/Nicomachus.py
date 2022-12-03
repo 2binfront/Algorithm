@@ -12,7 +12,7 @@ def Nicomachus(n):
     # clock = 0
 
     # 外层循环终止
-    while i < target:
+    while i <= target:
         j = i
         # 通项
         sumtemp = (i + j) * ((j - i) / 2 + 1) / 2
@@ -29,11 +29,13 @@ def Nicomachus(n):
 
 if __name__ == "__main__":
     test1 = 4
-    test2 = 5
-    test3 = 6
+    test2 = 2
+    test3 = 1
+    test4 = 3
     anslist1 = Nicomachus(test1)
     anslist2 = Nicomachus(test2)
     anslist3 = Nicomachus(test3)
+    anslist4 = Nicomachus(test4)
     # 打印起点i和末尾j
-    print(anslist1, anslist2, anslist3)
+    print(anslist1, anslist2, anslist3,anslist4)
 
