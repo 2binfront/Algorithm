@@ -4,8 +4,8 @@ node_modules/
 review001/
 __pycache__/
 
-**/os_src/*
-!**/os_src/*.md
+**/lib/*
+!**/lib/*.md
 
 *.exe
 *.json
