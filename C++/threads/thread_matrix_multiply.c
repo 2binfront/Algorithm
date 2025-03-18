@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./os_src/thread.h"
+#include <thread.h>
 #include <time.h>
 #define NTHREADS 1000
 static thread_t threads[NTHREADS];
@@ -12,9 +12,8 @@ int A[N][N];
 int B[N][N];
 int C[N][N];
 // 定义线程函数
-void *matrix_multiply(void *arg) {
+void matrix_multiply(int i) {
 
-    int i = *((int *)arg);
     int j;
     for (j = 0; j < N; j++) {
         int sum = 0;
@@ -35,11 +34,14 @@ int main(int argc, char **argv) {
         for (j = 0; j < N; j++) {
             A[i][j] = i + j;
             B[i][j] = i - j;
+             printf("A[%d][%d]:%d ",i,j, A[i][j]);
+                printf("B[%d][%d]:%d ",i,j, B[i][j]);
         }
+                printf("\n");
     }
     // 创建线程
     for (i = 0; i < N; i++) {
-        thread_create(&threads[i], &matrix_multiply, &i);
+        thread_create(&threads[i], &matrix_multiply, i);
     }
     // 等待线程结束
     for (i = 0; i < N; i++) {
@@ -48,7 +50,7 @@ int main(int argc, char **argv) {
     // 输出结果
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
-            printf("%d ", C[i][j]);
+            printf("C[%d][%d]:%d ",i,j, C[i][j]);
         }
         printf("\n");
     }
