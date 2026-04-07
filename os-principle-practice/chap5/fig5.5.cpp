@@ -8,7 +8,9 @@
      for (i = 0; i < 3; i++) {
          queues[i] = new TSQueue();
          thread_create_p(&workers[i],
-                    putSome, queues[i]);
+
+
+                        putSome, queues[i]);
      }
      // Wait for some items to be put.
      thread_join(workers[0]);
