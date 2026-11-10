@@ -14,3 +14,5 @@ bash/
 *.vue
 !tsconfig.json
 .vs/
+
+.DS_store
